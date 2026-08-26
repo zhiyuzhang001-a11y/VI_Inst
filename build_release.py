@@ -18,7 +18,6 @@ FILES = (
     "build_release.py",
     "check_environment.py",
     "config.toml",
-    "install_local_copy.bat",
     "keithley_2400.py",
     "keithley_6221_pdel.py",
     "keithley_iv.py",
