@@ -1,0 +1,16 @@
+# 可发布的默认配置。每台电脑的修改请写入 config.local.toml。
+
+[visa]
+keithley_6221 = "GPIB0::12::INSTR"
+keithley_2182a = "GPIB0::7::INSTR"
+keithley_2400 = "GPIB0::21::INSTR"
+
+[serial]
+magnet = "COM3"
+rotator = "COM4"
+
+[data]
+# 留空时使用 C:\Users\<用户名>\VI_Inst_Data。
+# 建议不要设置为 iCloud、OneDrive 或网络盘目录。
+output_dir = ""
+

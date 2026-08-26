@@ -1,0 +1,21 @@
+# Per-machine settings
+config.local.toml
+
+# Experimental data and generated figures
+*.csv
+*.png
+*.wav
+202[0-9]*/
+2400/
+H_R_plot/
+t_R_plot/
+VI_Inst_Data/
+
+# Build and local tooling
+dist/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.agent-token-manager/
+
