@@ -1,4 +1,31 @@
-# VI_Inst 测量程序
+# VI_Inst
+
+VI_Inst is a Windows launcher and a set of Python scripts for laboratory
+electrical transport measurements. The launcher lists Keithley voltage/current
+monitoring, Hall and angle scans, pulsed measurements, and a simulated live plot.
+See the [v1.0.0 release](https://github.com/zhiyuzhang001-a11y/VI_Inst/releases/tag/v1.0.0)
+and the Chinese installation guide below.
+
+**Try the simulated plot.** After setup, start the launcher with
+`run_windows.bat` and choose **Live plot simulation**. Its
+[simulation branch](keithley_iv.py) supplies synthetic readings without
+connecting to an instrument. The plot window shows voltage and resistance
+against time. Stop the simulation with Ctrl+C in its console.
+
+The simulator writes a fresh `diagnostics/plot_stress_test.csv` on each run.
+To retain existing output, use a new data directory. For example, from an
+activated environment in PowerShell:
+
+```powershell
+$env:VI_INST_DATA_DIR = Join-Path $env:TEMP ("VI_Inst-demo-" + [guid]::NewGuid())
+python keithley_iv.py --simulate
+```
+
+The [launcher](launcher.py) dispatches the selected script as a separate process,
+and [the live plot](live_plot_process.py) runs separately from CSV logging.
+Hardware measurements use the configured VISA and serial addresses and require
+operator confirmation. The simulation exercises the plotting and logging path
+with synthetic values. Hardware qualification requires a separate bench check.
 
 这是一个用于电输运测量的 Windows 程序，支持 Keithley 6221、2182A、2400、磁场控制器和角度转台。
 
